@@ -1,0 +1,20 @@
+ 1998  python3 -m venv v0
+ 1999  source ../venv.virtualenviroments/v0/bin/activate
+ 2000  pip list
+ 2001  python3 script/rq-requests.py 
+ 2002  python3 script/webscrap.py 
+ 2003  pip freeze > venv.requirments/v0-requirments.txt
+ 2004  cat venv.requirments/v0-requirments.txt
+ 2005  pip list
+ 2006  pip install requests
+ 2007  pip list
+ 2008  pip freeze > venv.requirments/v0-requirments.txt
+ 2009  cat venv.requirments/v0-requirments.txt
+ 2010  python3 script/webscrap.py 
+ 2011  pip install bs4
+ 2012  pip freeze > venv.requirments/v0-requirments.txt
+ 2013  python3 script/webscrap.py 
+ 2014  history
+ 2015  pip install -r venv.requirments/v0-requirments.txt 
+ 2016  history
+
