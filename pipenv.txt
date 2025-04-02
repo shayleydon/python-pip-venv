@@ -1,0 +1,59 @@
+=============pipenv=============
+https://medium.com/analytics-vidhya/why-pipenv-over-venv-for-python-projects-a51fb6e4f31e
+
+Let’s now move to Pipenv which has now become the recommended way of managing project dependencies. Instead of having a requirements.txt file in your project, and managing virtual environments, we'll now have a Pipfile in our project that does all this stuff automatically. If you have ever worked with Node.js, you might be familiar with the package.json and package-lock.json files. The Pipfile and Pipfile.lock files are similar to them in Python.
+Install pipenv
+
+Let’s start by installing Pipenv first in our local machine. Use the following command to do so :
+
+pip install pipenv
+
+Using pipenv for the first time
+
+pipenv install
+
+The above command will look for a Pipenv file. If it doesn’t exist, it will create a new environment and activate it. After the above command is run, we’ll find two new files : Pipenv and Pipenv.lock
+Activate already created pipenv environment
+
+pipenv shell
+
+Install/Uninstall dependencies
+
+pipenv install djangopipenv uninstall django
+
+Install dev dependencies
+
+pipenv install nose --dev
+
+Install from requirements.txt
+
+pipenv install -r requirements.txt
+
+Check security vulnerabilities
+
+pipenv check
+
+Check dependency graph
+
+pipenv graph
+
+Run custom scripts
+
+Similar to npm, we can also run custom scripts using pipenv. Suppose we are working on a Django project, we have to run the server using the command :python manage.py runserver . Now we can add this command in our Pipfile, Currently, our Pipfile may look like this :
+
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"[packages]
+django = "*"[dev-packages]
+nose = "*"[scripts]
+server = "python manage.py runserver"[requires]
+python_version = "3.8"
+
+In the above output, we can see we have added our script in the scripts section. So, now we can simply run the below command to run our server :
+
+pipenv run server
+
+Lock the dependencies
+
+pipenv lock -r

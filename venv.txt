@@ -1,0 +1,53 @@
+https://frankcorso.dev/setting-up-python-environment-venv-requirements.html
+
+
+==requirements==
+
+*write/update to file
+pip freeze > requirements.txt
+
+*install from file
+pip install -r requirements.txt
+
+===create venv dir===
+python -m venv dir
+source dir/bin/activate
+pip install pandas
+pip freeze > requirements.txt
+pip install -r requirements.txt
+deactivate
+
+===myexample===
+*python3, pip not installed globally
+	
+	python --version
+	pip -version 
+ 2034  python3 -m venv venv02
+ 2035  pip list
+ 2036  source venv02/bin/activate
+ 2037  pip list
+ 2038  pip install pandas
+   2051  pip freeze > requirments-venv.txt/requirements-venv02.txt 
+ 2040  python3 script/rq-requests.py 
+ 2041  pip install requests
+   2051  pip freeze > requirments-venv.txt/requirements-venv02.txt 
+ 2042  python3 script/rm-random.py 
+ 2043  pip list
+ 2044  pip install numpy pandas requests
+  2051  pip freeze > requirments-venv.txt/requirements-venv02.txt 
+  2051  pip install -r requirments-venv.txt/requirements-venv02.txt 
+ 2045  history
+ 
+ 
+ 2036  source venv02/bin/activate
+  2034  python3 -m venv venv02
+  2051  pip install -r requirments-venv.txt/requirements-venv02.txt
+  2051  pip freeze > requirments-venv.txt/requirements-venv02.txt 
+  2027  pip list
+ 2028  python3 script/rm-random.py 
+ 2029  python3 script/rq-requests.py 
+ 2030  python3 script/pd-pandas.py 
+ 2031  python3 script/np-numpy.py 
+ 2032  python3 script/main.py 
+ deactivate
+
